@@ -49,11 +49,12 @@ Read "$A$ is the set of all $x$ in $S$ such that $P(x)$."
         \item [(a)] Is $A\subseteq B$?
         \item [(b)] Is $A\subset B$?
     \end{enumerate}
-    \sol
+    \sol{
     \begin{enumerate}
         \item [(a)] Yes, $\forall x$, if $x\in A$ then $x\in B$
         \item [(b)] Yes, $\exists x$ such that $x\in B$ and $x\notin A$
     \end{enumerate}
+    }
 }
 \subsection{Element Method of Proof}
 \dfn{Element Method of Proof}{
@@ -78,7 +79,7 @@ Read "$A$ is the set of all $x$ in $S$ such that $P(x)$."
         By definition of $A$, there is an integer $r$, such that $x=6r+12$.
         Let $s=2r+4$, then $s\in \mathbb{Z}$ as products and sums of integers are integers, and so $3s\in B$ by definition of $B$.
         Also, $3s=3(2r+4)=6r+12=x$, thus by definition of $B$, $x$ is an element of $B$.
-        \square
+
     \end{myproof}
 
     \begin{myproof}Show that $B\nsubseteq A$\\
@@ -90,7 +91,7 @@ Read "$A$ is the set of all $x$ in $S$ such that $P(x)$."
          2r &= -3 \text{ by subtracting 4 from both sides } \\
          r &= \frac{-3}{2} \text{ by dividing both sides by 2 } \\
         \end{align*}
-        \square
+
     \end{myproof}
 }
 \subsection{Set Equality}
@@ -101,26 +102,25 @@ Read "$A$ is the set of all $x$ in $S$ such that $P(x)$."
     Define sets $A$ and $B$ as follows:
     \[ A=\{m\in \mathbb{Z}\mid m=2a \text{ for some integer a}\} \]
     \[ B=\{n\in \mathbb{Z}\mid 2b-2 \text{ for some integer b}\} \]
-    Show that $A=B$\\
+    Show that $A=B$
     \begin{enumerate}
         \item [(a)] \begin{myproof}
-            $A\subseteq B$\\
+            $A\subseteq B$
             Let $x\in A$, by the definition of $A$ there exists an integer $a$ such that $x=2a$.
             Let $b=a+1$, then $b\in \mathbb{Z}$ as it is a sum of integers.
             Also $2b-2=2(a+1)-2=2a+2-2=2a=x$.
             Thus by definition of $B$, $x\in B$.
-            Hence $A\subseteq B$. \square
+            Hence $A\subseteq B$.
         \end{myproof}
         \item [(b)] \begin{myproof}
             Let $x\in B$, by the definition of $B$ there exists an integer $b$ such that $x=2b-2$.
             Let $a=b-1$, then $a\in \mathbb{Z}$ as it is a difference of integers.
             Also $2a=2(b-1)=2b-2=x$
             Thus by the definition of $A$, $x\in A$.
-            Hence $B\subseteq A$. \square 
+            Hence $B\subseteq A$. 
         \end{myproof}
     \end{enumerate}
-    \\
-    Thus we have shown that $A=B$. \square
+    Thus we have shown that $A=B$.
 }
 \subsection{Operations On Sets}
 \dfn{Set Operations}{
@@ -183,7 +183,7 @@ Read "$A$ is the set of all $x$ in $S$ such that $P(x)$."
     \begin{enumerate}
         \item [(1)] $A$ is the union of all the $A_{i}$.
         \item [(2)] The sets $A_{1},A_{2},A_{3},...$ are mutually disjoint.
-    \end{itemize}
+    \end{enumerate}
     \begin{tikzpicture}
         \node[draw,ellipse,minimum width=5cm,minimum height=3cm,thick](ell)at(0,0){};
 
