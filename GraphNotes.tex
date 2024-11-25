@@ -1,0 +1,92 @@
+\documentclass{report}
+
+\input{preamble}
+\input{macros}
+\input{letterfonts}
+
+\title{\Huge{Math 125}\\Lecture notes --- Binomial Theorem and Graphs}
+\author{\huge{Matteo Costagliola}}
+\date{November 25, 2024}
+
+\usepackage{darkmode}
+\enabledarkmode
+
+\begin{document}
+
+\maketitle
+\newpage% or \cleardoublepage
+% \pdfbookmark[<level>]{<title>}{<dest>}
+\pdfbookmark[section]{\contentsname}{toc}
+\tableofcontents
+\pagebreak
+
+\chapter{Binomial Theorem}
+\large
+
+Recall,
+$\binom{n}{r}=$ the number of r-element subsets of an n-element set.
+\[ \binom{n}{0}=1=\binom{n}{n}\]
+\[ \binom{n}{1}=n=\binom{n}{n-1} \]
+\[ \binom{n}{r}=\binom{n}{n-r} \]
+
+
+\thm{The Binomial Theorem}{
+    Given any real numbers $a$ and $b$ and any nonnegative integer $n$,
+    \[(a+b)^{n}=\sum_{k=0}^{n}\binom{n}{k}a^{n-k}b^{k} \]
+    For example, $(a+b)^{3}\\
+    % some error in line 36
+    $=\binom{{}}{0}$$a^{3}b^{0}$$+\binom{3}{1}a^{2}b^{1}+\binom{3}{2}a^{1}b^{2}+\binom{3}{3}a^{0}b^{3}$
+    $(a+b)^{3}=(a+b)(a+b)(a+b)$ multiplied out is the sum of all possible ordered products of $a$'s and $b$'s. It's $aaa+baa+aba+aab+bba+bab+abb+bbb$. The variable in the $i$th position is taken from the $i$th parenthesis.
+}
+
+\ex{Inductive Proof of the Binomial Theorem}{
+Clearly, $(a+b)^{0}=1=\sum_{k=0}^{0}\binom{0}{k}a^{0-k}b^{0}$.\\
+Suppose, $(a+b)^{m}=\sum_{k=0}^{m}\binom{m}{k}a^{m-k}b^{k}$ for some integer $m\geq 0$.\\
+Then $(a+b)^{m+1}=(a+b)(a+b)^{m}\\ =(a+b)\sum_{k=0}^{m}\binom{m}{k}a^{m-k}b^{k}\\ =\sum_{k=0}^{m}\binom{m}{k}a^{m-k+1}b^{k}+\sum_{j=0}^{m}\binom{m}{j}a^{m-j}b^{j+1}$\\ For the second sum, let $k=j+1$ so that the sum becomes,
+\\ $=\sum_{k=0}^{m}\binom{m}{k}a^{m-k+1}b^{k}+\sum_{k=1}^{m+1}\binom{m}{k-1}a^{m-k+1}b^{k+1}$
+}
+
+\chapter{Graph Theory}
+A graph $G$ consists of two finite sets: a nonempty set $V(G)$ of vertices and a set $E(G)$ of edges where each edge is associated with either one or two vertices called its endpoints. If edge $e$ is associated with vertex $v$, then $e$ and $v$ are said to be incident.
+\\\\
+Graphs have pictorial representations in which the vertices are represented by dots and the edges by line segments.
+%insert graph once back at dorm
+\ex{}{
+    $V(G)=\{v_{1},v_{2},v_{3},v_{4}\}$ and $E(G)=\{e_{1},e_{2},e_{3},e_{4},e_{5}\}$.$e_{3}$ and $e_{4}$ have the same set of endpoints. They are said to parallel. Edge $e_{5}$ has only one endpoint. $e_{5}$ is called a loop. Vertex $v_{4}$ is said to be isolated.
+}
+\noindent The degree of a vertex in a graph is the number of edges incident to it. If a loop is incident to a vertex, then the loop contributes 2 to the degree. 
+\\\\
+In the graph of the previous slide, deg$(v_{1})=2$, deg$(v_{2})=3$, deg$(v_{3})=5$ and deg$(v_{4})=0$. Note that $2+3+5+0=10$ is twice the number of edges.
+
+\thm{Handshake Theorem}{
+    In a graph $G$, the sum of the degrees of the vertices of $G$ equals twice the number of edges of $G$.
+}
+%\noindent \underline{Handshake Theorem} --- In a graph $G$, the sum of the degree of the vertices of $G$ equals twice the number of edges of $G$.
+\pf{Proof of Theorem 2.0.1}{
+    Each edge contributes 2 to the sum of the degrees.
+}
+\cor{}{
+    Every graph has an even number of vertices of odd degree.
+}
+\ex{Königsberg Bridge Problem, 1736}{
+    The problem is to walk along the edges of the graph, traversing every edge exactly once and coming back to the starting point.}
+
+Let $G$ be a graph and let $v$ and $w$ be vertices of $G$.\\\\
+A walk in $G$ from $v$ to $w$ is a finite alternating sequence of vertices and edges of $G$. Thus a walk has the form $v_{0}e_{1}v_{1}e_{2}\cdots v_{n-1}e_{n}v_{n}$ where the $v$'s represent the vertices, and the $e$'s represent the edges.\\\\
+A \underline{trail} from $v$ to $w$ is a walk from $v$ to $w$ that does not contain a repeated edge.\\\\
+A \underline{path} from $v$ to $w$ is a trail that does not contain a repeated vertex.\\\\
+A \underline{closed walk} is a walk that starts and ends at the same vertex.\\\\
+A \underline{circuit} is a closed walk that contains at least one edge and does not contain a repeated edge.\\\\
+A graph $H$ is a \underline{subgraph} of a graph $G$ if, and only if, every vertex of $H$ is also a vertex in $G$, and evry edge in $H$ is also an edge of $G$, and every edge in $H$ has the same endpoints as it has in $G$.\\\\
+Two vertices $v$ and $w$ of a graph $G$ are connected if, and only if, there is a walk from $v$ to $w$.\\\\
+A graph $H$ is a \underline{connected component} of a graph $G$ if, and only if,
+\begin{enumerate}
+    \item  $H$ is a subgraph of $G$.
+    \item  $H$ is connected. 
+    \item  no connected subgraph of $G$ has $H$ as a subgraph and contains vertices or edges that are not in $H$.
+\end{enumerate}
+Let $G$ be a graph. An \underline{Euler Circuit} for $G$ is a circuit that contains every vertex and every edge of $G$.
+\thm{}{If a graph has an Euler circuit, then every vertex of the graph has positive even degree.}
+\pf{Proof of Theorem 2.0.2}{Consider and Euler circuit in a graph $G$ and a vertex $v$ of $G$. The degree of $v$ is positive because $v$ is in the Euler circuit and each vertex of a circuit is associated with an edge of the circuit. For each appearance of $v$ in the circuit other than as the first or last vertex, say $v=v_{i}$, there are two edges incident to $v$ in the circuit, $e_{i}$ and $e_{i+1}$. If $v$ is the first and last vertex in the circuit then the first and last edges together contribute 2 to the degree.}
+
+\end{document}
