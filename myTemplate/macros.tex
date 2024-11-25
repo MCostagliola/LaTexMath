@@ -68,3 +68,14 @@
     \vspace{0.3cm} % Add space after the proof
 }
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Define custom example command with optional numbering and inline separator
+\newcommand{\ex}[3][]{ % [#1] is optional, #2 is title, #3 is content
+    \noindent\textbf{#2} % Title in bold
+    \ifx&#1& % Check if optional input is empty
+        % No optional input, skip number
+    \else
+        \ \textbf{#1} % Include the optional number, bold with space
+    \fi
+    \ --- % Add the separator
+    #3 % example content
+}
