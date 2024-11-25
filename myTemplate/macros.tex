@@ -1,0 +1,61 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Custom title section
+\newcommand{\classinfo}[3]{
+    \begin{center}
+        {\Large \textbf{#1}} \\ % Class name
+        \vspace{0.5cm}
+        {\Large #2} \\ % Lecture topic
+        \vspace{0.5cm}
+        {\large #3}   % Date
+    \end{center}
+    \vspace{0.5cm} % Add spacing below the title
+}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Define custom theorem command with optional numbering and inline separator
+\newcommand{\thm}[3][]{ % [#1] is optional, #2 is title, #3 is content
+    \noindent\textbf{#2} % Title in bold
+    \ifx&#1& % Check if optional input is empty
+        % No optional input, skip number
+    \else
+        \ \textbf{#1} % Include the optional number, bold with space
+    \fi
+    \ --- % Add the separator
+    #3 % Theorem content
+}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Define custom claim command with optional numbering and inline separator
+\newcommand{\clm}[3][]{ % [#1] is optional, #2 is title, #3 is content
+    \noindent\textbf{#2} % Title in bold
+    \ifx&#1& % Check if optional input is empty
+        % No optional input, skip number
+    \else
+        \ \textbf{#1} % Include the optional number, bold with space
+    \fi
+    \ --- % Add the separator
+    #3 % claim content
+}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Define custom corollary command with optional numbering and inline separator
+\newcommand{\crl}[3][]{ % [#1] is optional, #2 is title, #3 is content
+    \noindent\textbf{#2} % Title in bold
+    \ifx&#1& % Check if optional input is empty
+        % No optional input, skip number
+    \else
+        \ \textbf{#1} % Include the optional number, bold with space
+    \fi
+    \ --- % Add the separator
+    #3 % corollary content
+}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Define custom lemma command with optional numbering and inline separator
+\newcommand{\lma}[3][]{ % [#1] is optional, #2 is title, #3 is content
+    \noindent\textbf{#2} % Title in bold
+    \ifx&#1& % Check if optional input is empty
+        % No optional input, skip number
+    \else
+        \ \textbf{#1} % Include the optional number, bold with space
+    \fi
+    \ --- % Add the separator
+    #3 % lemma content
+}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
