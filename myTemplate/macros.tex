@@ -59,3 +59,12 @@
     #3 % lemma content
 }
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Custom proof command
+\newcommand{\proof}[2]{ % #1 is the proof content
+    \vspace{0.3cm} % Add space before the proof
+    \noindent\textit{#1} % "Proof" in italics
+    \hspace{0.2cm} #2 % Proof content
+    \hfill$\square$ % QED symbol at the end
+    \vspace{0.3cm} % Add space after the proof
+}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
