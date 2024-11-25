@@ -1,0 +1,29 @@
+\documentclass[12pt]{article}
+
+\usepackage{changepage, amsmath, amssymb, pgfplots, tikz}
+\pgfplotsset{compat=1.18}
+\usepackage{fullpage}
+\usepackage{darkmode}
+\enabledarkmode
+\usepackage{ulem}
+
+\input{macros.tex}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{document}
+\classinfo{Math 125: Discrete Math I}{Introduction to Graph Theory}{November 25, 2024}
+
+\section*{\underbar{Binomial Theorem}}
+\thm{The Binomial Theorem}{Given any real numbers $a$ and $b$ and any nonnegative integer n,\\\\
+${(a+b)}^{n}=\sum_{k=0}^{n}\binom{n}{k}a^{n-k}b^{k}$.}
+\\\\
+For example, ${(a+b)}^{3}\\\\=\binom{3}{0}a^{3}b^{0}+\binom{3}{1}a^{2}b^{1}+\binom{3}{2}a^{1}b^{2}+\binom{3}{3}a^{0}b^{3}\\\\=a^{3}+3a^{2}b+3ab^{2}+b^{3}$.\\\\
+$(a+b)^{3}=(a+b)(a+b)(a+b)$ multiplied out is the sum of all possible ordered products of $a$'s and $b$'s. It's $aaa+baa+aba+aab+bba+bab+abb+bbb$. The variable in the $i$th position is taken from the $i$th parenthesis.\\\\
+\proof{Inductive Proof of Binomial Theorem}{
+Clearly, ${(a+b)}^{0}=1=\sum_{k=0}^{0}\binom{0}{k}a^{0-k}b^{0}$.\\\\
+Suppose ${(a+b)}^{m}=\sum_{k=0}^{m}\binom{m}{k}a^{m-k}b^{k}$ for some integer $m\geq 0$.\\\\
+Then ${(a+b)}^{m+1}={(a+b)}{(a+b)}^{m}\\\\=(a+b)\sum_{k=0}^{m}\binom{m}{k}a^{m-k}b^{k}\\\\=\sum_{k=0}^{m}\binom{m}{k}a^{m-k+1}b^{k}+\sum_{j=0}^{m}\binom{m}{j}a^{m-j}b^{j+1}$.\\\\
+For the second sum, let $k=j+1$ so that the sum becomes\\\\
+$=\sum_{k=0}^{m}\binom{m}{k}a^{m-k+1}b^{k}+\sum_{k=1}^{m+1}\binom{m}{k-1}a^{m-k+1}b^{k}\\\\=\binom{m+1}{0}a^{m+1}b^{0}+\sum_{i=1}^{m}[\binom{m}{k}+\binom{m}{k-1}]a^{m+1-k}b^{k}+\binom{m+1}{m+1}a^{0}b^{m+1}\\\\=\sum_{k=0}^{m+1}\binom{m+1}{k}a^{m+1-k}b^{k}$. By the principle of mathematical induction, the binomial theorem is true for all $n\geq 0$.
+}
+
+\end{document}
