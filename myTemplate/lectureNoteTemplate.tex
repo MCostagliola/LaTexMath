@@ -7,7 +7,88 @@
 \enabledarkmode
 \usepackage{ulem}
 
-\input{macros.tex}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Custom title section
+\newcommand{\classinfo}[3]{
+    \begin{center}
+        {\Large \textbf{#1}} \\ % Class name
+        \vspace{0.5cm}
+        {\Large #2} \\ % Lecture topic
+        \vspace{0.5cm}
+        {\large #3}   % Date
+    \end{center}
+    \vspace{0.5cm} % Add spacing below the title
+}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Define custom theorem command with optional numbering and inline separator
+\newcommand{\thm}[3][]{ % [#1] is optional, #2 is title, #3 is content
+    \noindent\textbf{#2} % Title in bold
+    \ifx&#1& % Check if optional input is empty
+        % No optional input, skip number
+    \else
+        \ \textbf{#1} % Include the optional number, bold with space
+    \fi
+    \ --- % Add the separator
+    #3 % Theorem content
+}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Define custom claim command with optional numbering and inline separator
+\newcommand{\clm}[3][]{ % [#1] is optional, #2 is title, #3 is content
+    \noindent\textbf{#2} % Title in bold
+    \ifx&#1& % Check if optional input is empty
+        % No optional input, skip number
+    \else
+        \ \textbf{#1} % Include the optional number, bold with space
+    \fi
+    \ --- % Add the separator
+    #3 % claim content
+}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Define custom corollary command with optional numbering and inline separator
+\newcommand{\crl}[3][]{ % [#1] is optional, #2 is title, #3 is content
+    \noindent\textbf{#2} % Title in bold
+    \ifx&#1& % Check if optional input is empty
+        % No optional input, skip number
+    \else
+        \ \textbf{#1} % Include the optional number, bold with space
+    \fi
+    \ --- % Add the separator
+    #3 % corollary content
+}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Define custom lemma command with optional numbering and inline separator
+\newcommand{\lma}[3][]{ % [#1] is optional, #2 is title, #3 is content
+    \noindent\textbf{#2} % Title in bold
+    \ifx&#1& % Check if optional input is empty
+        % No optional input, skip number
+    \else
+        \ \textbf{#1} % Include the optional number, bold with space
+    \fi
+    \ --- % Add the separator
+    #3 % lemma content
+}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Custom proof command
+\newcommand{\proof}[2]{ % #1 is the proof content
+    \vspace{0.3cm} % Add space before the proof
+    \noindent\textit{#1} % "Proof" in italics
+    \hspace{0.2cm} #2 % Proof content
+    \hfill$\square$ % QED symbol at the end
+    \vspace{0.3cm} % Add space after the proof
+}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Define custom example command with optional numbering and inline separator
+\newcommand{\ex}[3][]{ % [#1] is optional, #2 is title, #3 is content
+    \noindent\textbf{#2} % Title in bold
+    \ifx&#1& % Check if optional input is empty
+        % No optional input, skip number
+    \else
+        \ \textbf{#1} % Include the optional number, bold with space
+    \fi
+    \ --- % Add the separator
+    #3 % example content
+}
+
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \begin{document}
 \classinfo{Math 125: Discrete Math I}{Introduction to Graph Theory}{\today}
